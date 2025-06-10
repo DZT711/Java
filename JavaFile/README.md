@@ -1,9 +1,9 @@
 # Java File
-/
+```java
 import java.io.File;  // Import the File class
 
 File myObj = new File("filename.txt"); // Specify the filename
-/
+```
 ## All File Method
 | Method            | Type     | Description                                   |
 |------------------|---------|-----------------------------------------------|
