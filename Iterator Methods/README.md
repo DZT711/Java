@@ -1,5 +1,9 @@
 # Iterator Methods
 
+```java
+import java.util.Iterator;
+```
+
 | Method   | Description                                       | Return Type |
 |----------|---------------------------------------------------|-------------|
 | hasNext() | Returns `true` if there are more elements in the iteration. | boolean     |

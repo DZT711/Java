@@ -1,5 +1,9 @@
 # HashMap Methods
 
+```java
+import java.util.HashMap;
+```
+
 | Method              | Description                                                                | Return Type           |
 |---------------------|--------------------------------------------------------------------------|-----------------------|
 | clear()            | Remove all entries from the map.                                        | void                  |

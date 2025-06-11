@@ -1,5 +1,9 @@
 # LinkedList Methods
 
+```java
+import java.util.LinkedList;
+```
+
 | Method                 | Description                                                       | Return Type    |
 |------------------------|-------------------------------------------------------------------|---------------|
 | add()                  | Add an item to the list.                                        | boolean, void |

@@ -1,5 +1,9 @@
 # Scanner Methods
 
+```java
+import java.util.SCanner;
+```
+
 | Method               | Description                                                    | Return Type  |
 |----------------------|----------------------------------------------------------------|--------------|
 | close()             | Close the scanner object.                                     | void         |

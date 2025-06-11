@@ -1,5 +1,9 @@
 # Arrays Methods
 
+```java
+import java.util.Arrays;
+```
+
 | Method      | Description                                                              |
 |------------|--------------------------------------------------------------------------|
 | compare()   | Compares two arrays.                                                  |

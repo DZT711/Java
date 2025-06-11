@@ -1,5 +1,9 @@
 # ArrayList Methods
 
+```java
+import java.util.ArraysList;
+```
+
 | Method        | Description                                                         | Return Type    |
 |--------------|---------------------------------------------------------------------|---------------|
 | add()        | Add an item to the list.                                           | boolean, void |
