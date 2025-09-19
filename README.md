@@ -1,3 +1,177 @@
+# Java Tổng Hợp: Lý Thuyết + Tutorial + Ví dụ cho người mới
+
+Tài liệu này tổng hợp các khái niệm cơ bản trong Java, cách dùng File I/O, OOP, interface, inheritance… Có lý thuyết + ví dụ để bạn mới học có thể tham khảo & nhớ lâu.
+
+---
+
+## Mục lục
+
+1. [Lý thuyết cơ bản](#1-lý-thuyết-cơ-bản)  
+2. [OOP & Các khái niệm liên quan](#2-oop--các-khái-niệm-liên-quan)  
+   - Class & Object  
+   - Inheritance (Kế thừa)  
+   - Polymorphism (Đa hình)  
+   - Abstraction & Interface  
+   - Encapsulation  
+   - Constructors  
+3. [File I/O: FileWriter / FileReader + các thao tác với file](#3-file-io-filewriter--filereader--các-thao-tác-với-file)  
+4. [Data Structures trong Java](#4-data-structures-trong-java)  
+5. [Ví dụ thực hành tổng hợp](#5-ví-dụ-thực-hành-tổng-hợp)  
+6. [Tips & Best Practices](#6-tips--best-practices)  
+
+---
+
+## 1. Lý thuyết cơ bản
+
+- Ngôn ngữ Java: hướng đối tượng (OOP), chạy trên JVM, quản lý bộ nhớ tự động (garbage collection).  
+- Kiểu dữ liệu cơ bản (primitive): `int`, `long`, `short`, `byte`, `float`, `double`, `boolean`, `char`.  
+- Kiểu dữ liệu tham chiếu (reference types): `String`, mảng (arrays), Objects, Collections.  
+- Modifiers: `public`, `private`, `protected`, (default = package-private), `static`, `final`, `abstract`.  
+- Exception vs Error: ngoại lệ checked (ví dụ `IOException`) và unchecked; sử dụng `try/catch/finally`, `throws`, `throw`.  
+
+---
+
+## 2. OOP & Các khái niệm liên quan
+
+### Class & Object
+
+- **Class** là khuôn mẫu định nghĩa các thuộc tính (fields) và hành vi (methods).  
+- **Object** là thể hiện cụ thể của class.  
+- **Constructor** là phương thức đặc biệt để khởi tạo object khi tạo mới.  
+
+### Inheritance (Kế thừa)
+
+- Dùng từ khóa `extends`.  
+- Class con sẽ kế thừa fields & methods từ class cha, có thể override.  
+- Mối quan hệ “is-a”.  
+
+### Polymorphism (Đa hình)
+
+- Gồm **method overriding** (runtime) & **method overloading** (compile-time).  
+- Biến tham chiếu của superclass có thể trỏ tới object subclass.  
+
+### Abstraction & Interface
+
+- **Abstraction**: che dấu chi tiết thực thi, chỉ lộ ra những gì cần thiết.  
+- Đạt được bằng cách dùng `abstract class` hoặc `interface`. Ví dụ, abstract class chứa method abstract + method thường; interface định nghĩa phương thức mà class implement phải tuân theo. :contentReference[oaicite:0]{index=0}
+
+### Encapsulation (Đóng gói)
+
+- Giấu dữ liệu bên trong class, biến `private`, chỉ cho truy cập qua getter/setter. :contentReference[oaicite:1]{index=1}  
+- Giúp bảo vệ trạng thái object, giữ cho dữ liệu luôn hợp lệ.  
+
+### Constructors (Phương thức khởi tạo)
+
+- Là phương thức đặc biệt, tên phải trùng tên class, không có kiểu trả về (return type). :contentReference[oaicite:2]{index=2}  
+- Dùng để khởi tạo trạng thái ban đầu cho object.  
+- Có thể có nhiều constructor với các tham số khác nhau (overloading constructor).  
+- Nếu không định nghĩa constructor nào, Java tự tạo constructor mặc định (không tham số). :contentReference[oaicite:3]{index=3}  
+
+---
+
+## 3. File I/O: FileWriter / FileReader + các thao tác với file
+
+<!-- phần này giữ như cũ, không sửa -->
+
+---
+
+## 4. Data Structures trong Java
+
+Dưới đây là các cấu trúc dữ liệu quan trọng thường gặp + cách chọn dùng.
+
+| Data Structure | Khi nào dùng | Ưu điểm / Nhược điểm |
+|---|---|---|
+| **Array** | Khi biết trước số lượng phần tử, cần truy cập theo chỉ số nhanh. | Truy cập nhanh theo chỉ số, cố định kích thước. Thêm/bớt phần tử khó khăn. |
+| **List** (`ArrayList`, `LinkedList`) | Khi cần danh sách động, thêm/xóa phần tử. | `ArrayList` truy cập nhanh, chèn/xóa cuối nhanh; `LinkedList` tốt khi thêm/xóa nhiều vị trí đầu/cuối. |
+| **Set** (`HashSet`, `TreeSet`) | Khi không muốn phần tử trùng, cần đảm bảo tập hợp không có thứ tự hoặc có thứ tự sắp xếp. | `HashSet` nhanh, `TreeSet` sắp thứ tự nhưng chậm hơn. |
+| **Map** (`HashMap`, `TreeMap`) | Khi muốn lưu cặp key-value, tìm giá trị theo khóa. | `HashMap` nhanh, không sắp thứ tự; `TreeMap` sắp thứ tự key. |
+| **Queue**, **Deque** | Khi xử lý hàng đợi (FIFO) hoặc đôi khi hai đầu. | `LinkedList`, `ArrayDeque` có hỗ trợ; thao tác đầu/cuối hiệu quả. |
+| **Stack** | Khi dùng Last-In-First-Out (LIFO) như undo, recursion. | Có lớp `Stack`, hoặc dùng `Deque` hiện đại hơn. |
+| **PriorityQueue / Heap** | Khi muốn truy xuất phần tử có ưu tiên cao nhất. | Thao tác thêm / lấy ưu tiên tốt, thường dùng cho thuật toán như Dijkstra, event scheduling. |
+| **Tree** / **Binary Tree / BST** | Cần tìm kiếm, chèn, xoá theo thứ tự; sắp sẵn sàng. | BST tốt nếu cây cân bằng; nếu không thì performance bị ảnh hưởng. |
+
+Một vài cấu trúc đặc biệt / nâng cao:
+
+- **Immutable Collections** / data structures bất biến.  
+- **BitSet** – lưu trữ bit, tiết kiệm bộ nhớ nếu chỉ cần true/false.  
+- **Graph** – thường tự cài bằng danh sách cạnh (adjacency list) hoặc ma trận cạnh (adjacency matrix).
+
+---
+
+## 5. Ví dụ thực hành tổng hợp
+
+```java
+// Interface định nghĩa khả năng in
+interface Printable {
+    void print();
+}
+
+// Abstract class để minh họa Abstraction
+abstract class Shape {
+    abstract double getArea();
+    abstract double getPerimeter();
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {  // Constructor
+        this.radius = radius;        // Encapsulation: biến private
+    }
+
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {  // Constructor overloading có thể thêm
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public double getArea() {
+        return width * height;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 2 * (width + height);
+    }
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Shape c = new Circle(5);
+        Shape r = new Rectangle(4, 6);
+
+        System.out.println("Circle area: " + c.getArea() + ", perimeter: " + c.getPerimeter());
+        System.out.println("Rectangle area: " + r.getArea() + ", perimeter: " + r.getPerimeter());
+
+        // Ví dụ data structure: dùng ArrayList + Map
+        java.util.List<Shape> shapes = new java.util.ArrayList<>();
+        shapes.add(c);
+        shapes.add(r);
+
+        java.util.Map<String, Double> areaMap = new java.util.HashMap<>();
+        for (Shape s : shapes) {
+            areaMap.put(s.getClass().getSimpleName(), s.getArea());
+        }
+        System.out.println("Areas map: " + areaMap);
+    }
+}
+```
+==============================================================================================================================================================================================================================
 # Java Tổng Quan
 
 Tài liệu này tổng hợp các lớp (classes), hàm (functions / methods), thư viện (libraries), frameworks, và các khái niệm chính trong Java mà bạn nên biết — vừa liên quan tới code của bạn, vừa các kiến thức bổ sung.
